@@ -1,10 +1,4 @@
-﻿using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
-using System.Text;
+﻿
 using static System.Console;
 
 namespace CSharp_Delegates_Advans
@@ -21,18 +15,19 @@ namespace CSharp_Delegates_Advans
             personList.Add(new Person("Jake", "Doe", "900101-2010"));
             personList.Add(new Person("Janice", "Doe", "920101-1020"));
 
-            //Console.WriteLine(personList);
+            //Console.WriteLine(personList);            
 
-            //foreach (Person person in personList.Where(IsUnderThirty))
+            //foreach (Person person in personList)
             //{
+            //    if (person.Age < 38) continue;
             //    WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
             //}
 
-            foreach (Person person in personList)
+            foreach (Person person in personList.Where(IsUnderThirtyEight))
             {
-                //if (person.Age < 30) continue;
                 WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
             }
+
             //foreach (Person person in personList.Where(person => person.IsFemale && person.Age < 30))
             //{
             //    WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
@@ -47,22 +42,19 @@ namespace CSharp_Delegates_Advans
             //}
         }
 
-        static bool IsUnderThirty(Person x)
+        static bool IsUnderThirtyEight(Person person)
         {
-            return x.Age < 30;
+            return person.Age < 38;
         }
-        //static bool IsUnderThirty(Person person)
-        //{
-        //    return person.Age < 30;
-        //}
-        static bool IsFemaleUnderThirty(Person person)
+        
+        static bool IsFemaleUnderThirtyEight(Person person)
         {
-            return person.IsFemale && IsUnderThirty(person);
+            return person.IsFemale && IsUnderThirtyEight(person);
 
         }
-        static bool IsMaleUnderThirty(Person person)
+        static bool IsMaleUnderThirtyEight(Person person)
         {
-            return !person.IsFemale && IsUnderThirty(person);
+            return !person.IsFemale && IsUnderThirtyEight(person);
 
         }
     }
