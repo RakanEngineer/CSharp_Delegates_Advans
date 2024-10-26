@@ -23,19 +23,19 @@ namespace CSharp_Delegates_Advans
             //    WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
             //}
 
-            foreach (Person person in personList.Where(IsUnderThirtyEight))
-            {
-                WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
-            }
-
-            //foreach (Person person in personList.Where(person => person.IsFemale && person.Age < 30))
+            //foreach (Person person in personList.Where(IsUnderThirtyEight))
             //{
             //    WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
             //}
 
-            //Func<Person, bool> myFunc = person => person.IsFemale && person.Age < 30;
+            foreach (Person person in personList.Where(person => person.IsFemale && person.Age < 38))
+            {
+                WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
+            }
 
-            //// person => person.IsFemale && person.Age < 30
+            //Func<Person, bool> myFunc = person => person.IsFemale && person.Age < 38;
+
+            //// person => person.IsFemale && person.Age < 38
             //foreach (Person person in personList.Where(myFunc))
             //{
             //    WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
