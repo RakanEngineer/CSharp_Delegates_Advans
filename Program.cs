@@ -40,6 +40,8 @@ namespace CSharp_Delegates_Advans
             Func<int> myFunc1 = someFunc;
             Func<string, int> myFunc2 = someFuncString;
 
+            Action test = someAction;
+
             //Func<Person, bool> myFunc = person => person.IsFemale && person.Age < 38;
 
             //// person => person.IsFemale && person.Age < 38
