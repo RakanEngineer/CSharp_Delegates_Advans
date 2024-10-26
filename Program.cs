@@ -33,6 +33,13 @@ namespace CSharp_Delegates_Advans
                 WriteLine($"{person.FirstName} {person.LastName}, {person.Age}");
             }
 
+            Action action1 = someAction; 
+            Action<int,string> action2 = someAction;
+            Action<Person, Person> action3 = (p1,p2) => WriteLine(p1 + " loves " + p2);
+
+            Func<int> myFunc1 = someFunc;
+            Func<string, int> myFunc2 = someFuncString;
+
             //Func<Person, bool> myFunc = person => person.IsFemale && person.Age < 38;
 
             //// person => person.IsFemale && person.Age < 38
@@ -42,6 +49,20 @@ namespace CSharp_Delegates_Advans
             //}
         }
 
+
+
+        static void someAction() {}
+        static void someAction(int x, string y)
+        {
+        }
+        static int someFunc()
+        {
+            return 1;
+        }
+        static int someFuncString(string x)
+        {
+            return 1;
+        }
         static bool IsUnderThirtyEight(Person person)
         {
             return person.Age < 38;
